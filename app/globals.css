@@ -74,6 +74,14 @@ body {
     transform: translateY(-2px);
 }
 
+/* Navigation Scrolled State */
+.nav-scrolled {
+    background: rgba(5, 15, 36, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Hero Section */
 .hero {
     color: var(--white);
