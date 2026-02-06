@@ -66,9 +66,10 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
         if (isOpen && recaptchaLoaded && window.grecaptcha) {
             setTimeout(() => {
                 const recaptchaContainer = document.getElementById('recaptcha-container');
-                if (recaptchaContainer && recaptchaContainer.childNodes.length === 0) {
+                const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+                if (recaptchaContainer && recaptchaContainer.childNodes.length === 0 && siteKey) {
                     window.grecaptcha.render('recaptcha-container', {
-                        sitekey: '6LfZQfsrAAAAAFP2Inh1qCeYwvR4Tkg2Qg0-Hhzv',
+                        sitekey: siteKey,
                         callback: () => setRecaptchaVerified(true),
                         'expired-callback': () => setRecaptchaVerified(false)
                     });
