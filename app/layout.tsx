@@ -46,9 +46,33 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lexgosolutions.com",
   },
-  verification: {
-    google: "your-google-verification-code",
+};
+
+// JSON-LD Structured Data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "LexGo Solutions",
+  "description": "Dedicated case management teams + AI-powered workflows for Personal Injury law firms. Handle more cases, close faster, and grow without the overhead.",
+  "url": "https://lexgosolutions.com",
+  "logo": "https://lexgosolutions.com/logo.png",
+  "image": "https://lexgosolutions.com/og-image.jpg",
+  "telephone": "+1-XXX-XXX-XXXX",
+  "email": "contact@lexgosolutions.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
   },
+  "sameAs": [
+    "https://twitter.com/lexgosolutions",
+    "https://linkedin.com/company/lexgosolutions"
+  ],
+  "serviceType": ["Legal Case Management", "Legal Outsourcing", "Personal Injury Support"],
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "priceRange": "$$"
 };
 
 export default function RootLayout({
@@ -65,6 +89,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta name="theme-color" content="#0A1F44" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
         {children}

@@ -1,0 +1,11 @@
+# Robots.txt for LexGo Solutions
+# https://lexgosolutions.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lexgosolutions.com/sitemap.xml
+
+# Disallow admin/api routes
+Disallow: /api/
