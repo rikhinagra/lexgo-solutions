@@ -1,6 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export default function Solution() {
     const solutions = [
@@ -38,21 +43,52 @@ export default function Solution() {
                     <h2 className="section-title">Your Dedicated Backend Team, Ready in 2 Weeks</h2>
                     <p className="section-subtitle">We handle everything from intake to settlement, supervised by experienced attorneys.</p>
                 </div>
-                <div className="solution-grid">
+            </div>
+            <div className="solution-carousel-wrapper">
+                <Swiper
+                    modules={[Autoplay, Pagination]}
+                    slidesPerView={3}
+                    spaceBetween={20}
+                    loop={true}
+                    speed={800}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 15,
+                        },
+                        600: {
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    }}
+                    className="solution-swiper"
+                >
                     {solutions.map((solution, index) => (
-                        <div key={index} className="solution-card solution-card-image">
-                            <div className="solution-image-wrapper">
+                        <SwiperSlide key={index} className="solution-slide">
+                            <div className="solution-slide-inner">
                                 <Image
                                     src={solution.image}
                                     alt={solution.title}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    style={{ objectFit: 'cover' }}
+                                    width={420}
+                                    height={420}
+                                    className="solution-slide-img"
                                 />
                             </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
             </div>
         </section>
     );
