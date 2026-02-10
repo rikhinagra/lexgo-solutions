@@ -73,15 +73,13 @@ export default function Solution() {
                 >
                     {solutions.map((solution, index) => (
                         <SwiperSlide key={index} className="solution-slide">
-                            <div className="solution-slide-inner">
-                                <Image
-                                    src={solution.image}
-                                    alt={solution.title}
-                                    fill
-                                    sizes="(max-width: 768px) 85vw, 500px"
-                                    style={{ objectFit: 'cover' }}
-                                />
-                            </div>
+                            <Image
+                                src={solution.image}
+                                alt={solution.title}
+                                width={500}
+                                height={500}
+                                className="solution-slide-img"
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>
