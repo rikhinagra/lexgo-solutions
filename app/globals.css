@@ -302,80 +302,64 @@ body {
 /* Solution Section */
 .solution {
     background: var(--cream);
-    padding: 100px 5%;
-}
-
-.solution-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-top: 4rem;
-}
-
-.solution-card {
-    background: var(--white);
-    padding: 2.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border-top: 3px solid var(--gold);
-}
-
-.solution-card-image {
-    padding: 0;
-    border-top: none;
+    padding: 80px 0 60px;
     overflow: hidden;
-    border-radius: 8px;
 }
 
-.solution-image-wrapper {
-    position: relative;
+.solution .container {
+    padding: 0 5%;
+}
+
+.solution-carousel-wrapper {
+    margin-top: 2rem;
+    padding: 1rem 5% 1rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solution-swiper {
     width: 100%;
-    padding-bottom: 100%; /* 1:1 square aspect ratio */
+    padding-bottom: 50px !important;
 }
 
-.solution-image-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+.solution-slide {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.solution-card-image:hover .solution-image-wrapper img {
-    transform: scale(1.025);
+.solution-slide-inner {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(10, 31, 68, 0.15);
 }
 
-.solution-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(10, 31, 68, 0.15);
+.solution-slide-img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    border-radius: 10px;
 }
 
-.solution-icon {
-    width: 70px;
-    height: 70px;
+/* Pagination dots */
+.solution-swiper .swiper-pagination {
+    bottom: 0px !important;
+}
+
+.solution-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--navy);
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.solution-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
     background: var(--gold);
-    color: var(--navy);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.solution-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: var(--navy);
-    margin-bottom: 1rem;
-}
-
-.solution-card p {
-    color: var(--slate);
-    line-height: 1.7;
+    width: 30px;
+    border-radius: 5px;
 }
 
 /* How It Works */
@@ -869,7 +853,6 @@ body {
     }
 
     .pain-points,
-    .solution-grid,
     .pricing-cards,
     .ai-features,
     .testimonial-grid {
