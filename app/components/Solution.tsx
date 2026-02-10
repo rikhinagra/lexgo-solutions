@@ -51,7 +51,7 @@ export default function Solution() {
                     effect="coverflow"
                     grabCursor={true}
                     centeredSlides={true}
-                    slidesPerView="auto"
+                    slidesPerView={1.6}
                     loop={true}
                     speed={800}
                     autoplay={{
@@ -61,25 +61,50 @@ export default function Solution() {
                     }}
                     coverflowEffect={{
                         rotate: 0,
-                        stretch: 80,
-                        depth: 200,
-                        modifier: 1,
+                        stretch: 0,
+                        depth: 250,
+                        modifier: 2,
                         slideShadows: true,
                     }}
                     pagination={{
                         clickable: true,
                     }}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1.2,
+                            coverflowEffect: {
+                                depth: 150,
+                                modifier: 1.5,
+                            },
+                        },
+                        768: {
+                            slidesPerView: 1.5,
+                            coverflowEffect: {
+                                depth: 200,
+                                modifier: 2,
+                            },
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            coverflowEffect: {
+                                depth: 250,
+                                modifier: 2,
+                            },
+                        },
+                    }}
                     className="solution-swiper"
                 >
                     {solutions.map((solution, index) => (
                         <SwiperSlide key={index} className="solution-slide">
-                            <Image
-                                src={solution.image}
-                                alt={solution.title}
-                                width={500}
-                                height={500}
-                                className="solution-slide-img"
-                            />
+                            <div className="solution-slide-inner">
+                                <Image
+                                    src={solution.image}
+                                    alt={solution.title}
+                                    width={600}
+                                    height={600}
+                                    className="solution-slide-img"
+                                />
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

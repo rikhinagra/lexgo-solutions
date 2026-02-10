@@ -319,18 +319,17 @@ body {
 .solution-swiper {
     width: 100%;
     padding-bottom: 60px !important;
-    overflow: visible;
-}
-
-.solution-swiper .swiper-wrapper {
-    align-items: center;
 }
 
 .solution-slide {
-    width: 500px;
     border-radius: 12px;
     overflow: hidden;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.solution-slide-inner {
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .solution-slide-img {
@@ -341,8 +340,13 @@ body {
 }
 
 /* Active slide glow effect */
-.solution-swiper .swiper-slide-active {
-    box-shadow: 0 25px 60px rgba(10, 31, 68, 0.3);
+.solution-swiper .swiper-slide-active .solution-slide-inner {
+    box-shadow: 0 30px 70px rgba(10, 31, 68, 0.35);
+}
+
+/* Dim non-active slides */
+.solution-swiper .swiper-slide:not(.swiper-slide-active) .solution-slide-inner {
+    opacity: 0.7;
 }
 
 /* Pagination dots */
@@ -862,11 +866,6 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .solution-slide {
-        width: 350px;
-        height: 350px;
-    }
-
     .steps {
         grid-template-columns: 1fr;
     }
@@ -967,11 +966,6 @@ body {
 
     .solution {
         padding: 60px 0;
-    }
-
-    .solution-slide {
-        width: 280px;
-        height: 280px;
     }
 
     .solution-carousel-wrapper {
