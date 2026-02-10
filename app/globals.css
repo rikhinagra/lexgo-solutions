@@ -348,9 +348,10 @@ body {
     box-shadow: 0 30px 70px rgba(10, 31, 68, 0.35);
 }
 
-/* Dim non-active slides */
-.solution-swiper .swiper-slide:not(.swiper-slide-active) .solution-slide-inner {
-    opacity: 0.7;
+/* Remove Swiper's default dark shadow overlay on side slides */
+.solution-swiper .swiper-slide-shadow-left,
+.solution-swiper .swiper-slide-shadow-right {
+    display: none !important;
 }
 
 /* Pagination dots */

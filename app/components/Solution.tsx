@@ -64,7 +64,7 @@ export default function Solution() {
                         stretch: 80,
                         depth: 200,
                         modifier: 1,
-                        slideShadows: true,
+                        slideShadows: false,
                     }}
                     pagination={{
                         clickable: true,
