@@ -61,9 +61,9 @@ export default function Solution() {
                     }}
                     coverflowEffect={{
                         rotate: 0,
-                        stretch: 0,
-                        depth: 250,
-                        modifier: 2,
+                        stretch: 80,
+                        depth: 200,
+                        modifier: 1,
                         slideShadows: true,
                     }}
                     pagination={{
@@ -71,25 +71,13 @@ export default function Solution() {
                     }}
                     breakpoints={{
                         320: {
-                            slidesPerView: 1.2,
-                            coverflowEffect: {
-                                depth: 150,
-                                modifier: 1.5,
-                            },
+                            slidesPerView: 1.4,
                         },
                         768: {
-                            slidesPerView: 1.5,
-                            coverflowEffect: {
-                                depth: 200,
-                                modifier: 2,
-                            },
+                            slidesPerView: 2,
                         },
                         1024: {
-                            slidesPerView: 2,
-                            coverflowEffect: {
-                                depth: 250,
-                                modifier: 2,
-                            },
+                            slidesPerView: 2.5,
                         },
                     }}
                     className="solution-swiper"
@@ -100,8 +88,8 @@ export default function Solution() {
                                 <Image
                                     src={solution.image}
                                     alt={solution.title}
-                                    width={600}
-                                    height={600}
+                                    width={420}
+                                    height={420}
                                     className="solution-slide-img"
                                 />
                             </div>
