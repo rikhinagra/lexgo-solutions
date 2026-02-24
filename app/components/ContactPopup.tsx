@@ -98,12 +98,13 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
         setIsSubmitting(true);
 
         try {
+            const recaptchaToken = window.grecaptcha.getResponse();
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, recaptchaToken }),
             });
 
             if (response.ok) {

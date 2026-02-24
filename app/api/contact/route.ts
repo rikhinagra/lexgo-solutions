@@ -3,7 +3,25 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
     try {
         const data = await request.json();
-        const { fullName, workEmail, phoneNumber, companyName } = data;
+        const { fullName, workEmail, phoneNumber, companyName, recaptchaToken } = data;
+
+        // Verify reCAPTCHA token with Google
+        const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
+        if (recaptchaSecretKey && recaptchaToken) {
+            const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `secret=${recaptchaSecretKey}&response=${recaptchaToken}`,
+            });
+            const recaptchaResult = await recaptchaResponse.json();
+
+            if (!recaptchaResult.success) {
+                return NextResponse.json(
+                    { status: 'error', message: 'reCAPTCHA verification failed' },
+                    { status: 400 }
+                );
+            }
+        }
 
         const timestamp = new Date().toLocaleString('en-US', {
             timeZone: 'Asia/Kolkata',
