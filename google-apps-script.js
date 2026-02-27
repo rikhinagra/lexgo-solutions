@@ -24,7 +24,7 @@
 // ============================================
 
 // CONFIGURATION
-const OWNER_EMAIL = "chandanguptabsb@gmail.com";
+const OWNER_EMAIL = "hello@lexgosolutions.com";
 
 function doPost(e) {
   try {

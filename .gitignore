@@ -40,3 +40,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI Documentation
+GEMINI.md
+.gemini*
+
+# OS specific files
+.DS_Store
+.DS_Store?
+*/.DS_Store
+*/.DS_Store?

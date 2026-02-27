@@ -69,7 +69,7 @@ const jsonLd = {
   "logo": "https://lexgosolutions.com/logo.png",
   "image": "https://lexgosolutions.com/og-image.jpg",
   "telephone": "+1-XXX-XXX-XXXX",
-  "email": "contact@lexgosolutions.com",
+  "email": "hello@lexgosolutions.com",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"

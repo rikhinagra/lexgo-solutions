@@ -49,7 +49,7 @@ export default function Pricing() {
     ];
 
     return (
-        <section className="pricing">
+        <section className="pricing" id="pricing">
             <div className="container">
                 <div className="section-header">
                     <div className="section-label">Transparent Pricing</div>

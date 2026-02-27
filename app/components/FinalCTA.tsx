@@ -9,7 +9,7 @@ export default function FinalCTA() {
                 <h2>Ready to 2x Your Case Capacity?</h2>
                 <p>Book a 15-minute discovery call to see how LexGo can transform your practice.</p>
                 <div className="final-cta-button">
-                    <Link href="mailto:contact@lexgosolutions.com" className="btn-primary">Schedule Discovery Call</Link>
+                    <Link href="mailto:hello@lexgosolutions.com" className="btn-primary">Schedule Discovery Call</Link>
                 </div>
             </div>
         </section>

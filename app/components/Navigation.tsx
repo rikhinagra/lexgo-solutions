@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import ContactPopup from './ContactPopup';
 
 export default function Navigation() {
@@ -32,7 +33,9 @@ export default function Navigation() {
     return (
         <>
             <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
-                <div className="logo">LexGo<span>Solutions</span></div>
+                <a href="/" className="logo">
+                    LexGo<span>Solutions</span>
+                </a>
                 <button className="nav-cta" onClick={openPopup}>Contact Us</button>
             </nav>
 
