@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lexgosolutions.com",
   },
+  verification: {
+    google: "bP2TLEPStspqchG1JgopwomOSvFFJwrl7QANqGpZZA0",
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
