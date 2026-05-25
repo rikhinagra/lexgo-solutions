@@ -47,6 +47,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://lexgosolutions.com",
   },
+  other: {
+    'GPTBot': 'index, follow',
+    'ClaudeBot': 'index, follow',
+    'PerplexityBot': 'index, follow',
+    'Google-Extended': 'index, follow',
+  },
   verification: {
     google: "bP2TLEPStspqchG1JgopwomOSvFFJwrl7QANqGpZZA0",
   },
@@ -147,6 +153,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           })(window, document, "clarity", "script", "vu3ir36wm9");`}
         </Script>
         {/* End Microsoft Clarity */}
+        {/* Tawk.to Live Chat */}
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a0ee90dd3e0461c3914cbf2/1jp53snk0';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();`}
+        </Script>
+        {/* End Tawk.to Live Chat */}
         {children}
       </body>
     </html>

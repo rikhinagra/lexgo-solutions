@@ -7,5 +7,8 @@ Allow: /
 # Sitemap location
 Sitemap: https://lexgosolutions.com/sitemap.xml
 
+# LLMs.txt for AI systems
+LLMs-txt: https://lexgosolutions.com/llms.txt
+
 # Disallow admin/api routes
 Disallow: /api/
